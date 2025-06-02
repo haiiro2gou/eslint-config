@@ -17,7 +17,8 @@
   "files": [
     "configs",
     "rules",
-    "index.js"
+    "index.js",
+    "README.md"
   ],
   "scripts": {
     "start": "node .",
