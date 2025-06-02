@@ -1,3 +1,11 @@
+/**
+ * @fileoverview Import/Export rules
+ * This file contains ESLint rules that enforce best practices for import/export statements in JavaScript.
+ * These rules help ensure that modules are imported and exported correctly, improving code organization and maintainability.
+ * @module rules/imports
+ * @type {import('eslint').Linter.Config}
+ */
+
 import importPlugin from "eslint-plugin-import";
 
 export default {

@@ -1,3 +1,12 @@
+/**
+ * @fileoverview ESLint configuration for TypeScript
+ * This file contains ESLint rules specifically for TypeScript code.
+ * These rules help ensure that TypeScript code is type-checked and follows best practices.
+ * @module rules/typescript
+ * @type {import('eslint').Linter.Config}
+ * @see https://typescript-eslint.io/rules/
+ */
+
 import typescriptEslint from "@typescript-eslint/eslint-plugin";
 import parser from "@typescript-eslint/parser";
 
