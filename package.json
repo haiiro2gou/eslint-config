@@ -1,0 +1,42 @@
+{
+  "name": "@haiiro2gou/eslint-config",
+  "version": "1.0.0",
+  "description": "ESLint configuration for JavaScript / TypeScript",
+  "homepage": "https://github.com/haiiro2gou/eslint-config#readme",
+  "bugs": {
+    "url": "https://github.com/haiiro2gou/eslint-config/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haiiro2gou/eslint-config.git"
+  },
+  "license": "MIT",
+  "author": "haiiro2gou",
+  "type": "module",
+  "main": "index.js",
+  "files": [
+    "configs",
+    "rules",
+    "index.js"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "peerDependencies": {
+    "eslint": "^9.28.0",
+    "typescript": "^5.8.3"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-n": "^17.18.0",
+    "eslint-plugin-promise": "^7.2.1"
+  },
+  "optionalDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.33.0"
+  }
+}
