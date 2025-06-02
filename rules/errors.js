@@ -7,5 +7,8 @@
  */
 
 export default {
-    rules: {},
+    rules: {
+        "no-fallthrough": "error",
+        "no-implicit-globals": "error",
+    },
 };

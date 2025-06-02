@@ -7,5 +7,8 @@
  */
 
 export default {
-    rules: {},
+    rules: {
+        "arrow-body-style": ["error", "as-needed"],
+        "func-style": "error",
+    },
 };

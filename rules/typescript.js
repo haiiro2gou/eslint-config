@@ -9,10 +9,12 @@
 
 import typescriptEslint from "@typescript-eslint/eslint-plugin";
 import parser from "@typescript-eslint/parser";
+import importPlugin from "eslint-plugin-import";
 
 export default {
     plugins: {
         "@typescript-eslint": typescriptEslint,
+        import: importPlugin,
     },
     languageOptions: {
         parser,
@@ -25,5 +27,63 @@ export default {
         ...typescriptEslint.configs["strict-type-checked"].rules,
         ...typescriptEslint.configs["stylistic-type-checked"].rules,
         // extra rules
+        "@typescript-eslint/strict-boolean-expressions": [
+            "warn",
+            {
+                allowString: false,
+                allowNumber: false,
+                allowNullableObject: false,
+            },
+        ],
+        "@typescript-eslint/restrict-plus-operands": [
+            "error",
+            {
+                checkCompoundAssignments: true,
+                allowBoolean: false,
+                allowNullish: false,
+                allowNumberAndString: false,
+                allowRegExp: false,
+                allowAny: false,
+            },
+        ],
+        "@typescript-eslint/restrict-template-expressions": [
+            "error",
+            {
+                allowNumber: true,
+                allowBoolean: true,
+                allowNullable: false,
+                allowAny: false,
+                allowNever: false,
+                allowNullish: false,
+                allowRegExp: false,
+            },
+        ],
+        "@typescript-eslint/switch-exhaustiveness-check": "warn",
+        "@typescript-eslint/method-signature-style": "error",
+        "@typescript-eslint/consistent-type-imports": [
+            "error",
+            {
+                prefer: "type-imports",
+                fixStyle: "inline-type-imports",
+                disallowTypeAnnotations: true,
+            },
+        ],
+        "import/consistent-type-specifier-style": ["error", "prefer-inline"],
+        "@typescript-eslint/consistent-type-exports": "error",
+        "no-restricted-syntax": [
+            "warn",
+            {
+
+                selector:
+                    "VariableDeclarator[init.type='TSAsExpression'][init.typeAnnotation.typeName.name!='const']",
+                message: "Don't use `as`.",
+            },
+        ],
+        "@typescript-eslint/require-array-sort-compare": [
+            "error",
+            {
+                ignoreStringArrays: true,
+            },
+        ],
     },
 };

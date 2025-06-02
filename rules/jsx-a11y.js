@@ -6,14 +6,14 @@
  * @type {import('eslint').Linter.Config}
  */
 
-import jsxA11y from 'eslint-plugin-jsx-a11y';
+import jsxA11y from "eslint-plugin-jsx-a11y";
 
 export default {
-  plugins: {
-    'jsx-a11y': jsxA11y,
-  },
-  rules: {
-    ...jsxA11y.configs.recommended.rules,
-    // extra rules
-  },
+    plugins: {
+        "jsx-a11y": jsxA11y,
+    },
+    rules: {
+        ...jsxA11y.configs.recommended.rules,
+        // extra rules
+    },
 };
