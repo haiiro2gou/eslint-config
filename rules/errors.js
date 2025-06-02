@@ -10,5 +10,6 @@ export default {
     rules: {
         "no-fallthrough": "error",
         "no-implicit-globals": "error",
+        "switch-colon-spacing": ["error", { "before": false, "after": true }],
     },
 };

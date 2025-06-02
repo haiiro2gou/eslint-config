@@ -13,8 +13,19 @@ export default {
         unicorn: unicornPlugin,
     },
     rules: {
+        "curly": [
+            "warn",
+            "multi-or-nest",
+            "consistent",
+        ],
+        "eqeqeq": "warn",
+        "no-case-declarations": "off",
+        "no-empty-function": "warn",
+        "no-floating-decimal": "warn",
         "no-implicit-coercion": "error",
         "no-implied-eval": "error",
+        "no-multi-spaces": "warn",
+        "no-nested-ternary": "warn",
         "no-restricted-globals": [
             "eval",
             "Boolean",
@@ -23,6 +34,7 @@ export default {
             { "name": "isFinite", "message": "Use Number.isFinite instead." },
             { "name": "isNaN", "message": "Use Number.isNaN instead." },
         ],
+        "no-unneeded-ternary": "warn",
         "prefer-arrow-functions/prefer-arrow-functions": [
             "error",
             {
@@ -34,5 +46,12 @@ export default {
         ],
         "prefer-template": "error",
         "unicorn/prefer-switch": "error",
+        "yoda": [
+            "warn",
+            "never",
+            {
+                "exceptRange": true
+            }
+        ],
     },
 };

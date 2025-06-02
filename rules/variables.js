@@ -39,6 +39,6 @@ export default {
                 allowInFunctions: false,
                 ignorePattern: ["^mut_", "^_mut_", "^#mut_"],
             },
-        ],
+        ]
     },
 };

@@ -7,5 +7,11 @@
  */
 
 export default {
-    rules: {},
+    rules: {
+        "arrow-body-style": ["warn", "as-needed"],
+        "arrow-parens": ["warn", "as-needed"],
+        "no-var": "error",
+        "prefer-const": "error",
+        "prefer-spread": "warn",
+    },
 };
