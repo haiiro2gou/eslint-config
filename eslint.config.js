@@ -1,7 +1,6 @@
-import { essentials, node, typescript } from "./index.js";
+import { essentials, node } from "./index.js";
 
 export default [
     ...essentials,
     ...node,
-    ...typescript,
 ];
