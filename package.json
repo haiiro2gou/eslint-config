@@ -20,7 +20,9 @@
     "index.js"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node .",
+    "eslint": "eslint index.js",
+    "eslint:fix": "eslint index.js --fix"
   },
   "peerDependencies": {
     "eslint": "^9.28.0",
