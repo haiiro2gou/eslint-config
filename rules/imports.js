@@ -39,7 +39,6 @@ export default {
         // extra rules
         "import/newline-after-import": "warn",
         "import/no-cycle": "error",
-        "import/no-duplicate-imports": "warn",
         "import/no-restricted-paths": [
             "error",
             {
@@ -52,5 +51,6 @@ export default {
             },
         ],
         "import/no-useless-path-segments": "error",
+        "no-duplicate-imports": "warn",
     },
 };

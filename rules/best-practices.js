@@ -5,11 +5,12 @@
  * @module rules/best-practices
  * @type {import('eslint').Linter.Config}
  */
-
+import preferArrowFunctionsPlugin from "eslint-plugin-prefer-arrow-functions";
 import unicornPlugin from "eslint-plugin-unicorn";
 
 export default {
     plugins: {
+        "prefer-arrow-functions": preferArrowFunctionsPlugin,
         unicorn: unicornPlugin,
     },
     rules: {
@@ -27,6 +28,7 @@ export default {
         "no-multi-spaces": "warn",
         "no-nested-ternary": "warn",
         "no-restricted-globals": [
+            "warn",
             "eval",
             "Boolean",
             "Function",

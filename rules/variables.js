@@ -15,10 +15,9 @@ export default {
         "functional/immutable-data": [
             "error",
             {
-                assumeTypes: true,
                 ignoreClasses: true,
                 ignoreImmediateMutation: true,
-                ignorePattern: [
+                ignoreIdentifierPattern: [
                     "^draft",
                     "^mut_",
                     "^_mut_",
@@ -37,7 +36,7 @@ export default {
             {
                 allowInForLoopInit: true,
                 allowInFunctions: false,
-                ignorePattern: ["^mut_", "^_mut_", "^#mut_"],
+                ignoreIdentifierPattern: ["^mut_", "^_mut_", "^#mut_"],
             },
         ]
     },

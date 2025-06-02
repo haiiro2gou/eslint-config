@@ -1,4 +1,4 @@
-/*!
+/* !
  * This project is licensed under the MIT License.
  * See https://github.com/haiiro2gou/eslint-config/blob/master/LICENSE for details.
  */
