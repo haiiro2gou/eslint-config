@@ -10,11 +10,13 @@
 import typescriptEslint from "@typescript-eslint/eslint-plugin";
 import parser from "@typescript-eslint/parser";
 import importPlugin from "eslint-plugin-import";
+import n from "eslint-plugin-n";
 
 export default {
     plugins: {
         "@typescript-eslint": typescriptEslint,
         import: importPlugin,
+        n,
     },
     languageOptions: {
         parser,
@@ -62,7 +64,6 @@ export default {
             {
                 allowNumber: true,
                 allowBoolean: true,
-                allowNullable: false,
                 allowAny: false,
                 allowNever: false,
                 allowNullish: false,
@@ -79,6 +80,7 @@ export default {
         ],
         "@typescript-eslint/switch-exhaustiveness-check": "warn",
         "import/consistent-type-specifier-style": ["error", "prefer-inline"],
+        "n/no-missing-import": "off",
         "no-restricted-syntax": [
             "warn",
             {
