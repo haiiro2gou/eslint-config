@@ -14,10 +14,12 @@
   "author": "haiiro2gou",
   "type": "module",
   "main": "index.js",
+  "types": "index.d.ts",
   "files": [
     "configs",
     "rules",
     "index.js",
+    "index.d.ts",
     "README.md"
   ],
   "scripts": {
