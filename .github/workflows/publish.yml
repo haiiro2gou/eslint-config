@@ -7,22 +7,19 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     steps:
-      - name: Generate Token
-        id: generate_token
-        uses: tibdex/github-app-token@v1
-        with:
-          app_id: ${{ secrets.APP_ID }}
-          private_key: ${{ secrets.PRIVATE_KEY }}
-
       - name: Checkout Repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          fetch-depth: 0
-
+          node-version: '22.x'
+          registry-url: 'https://registry.npmjs.org'
       - name: Publish to NPM
         run: |
-          npm config set '//registry.npmjs.org/:_authToken' "${{ steps.generate_token.outputs.token }}"
           npm publish --access public
         env:
-          NODE_AUTH_TOKEN: ${{ steps.generate_token.outputs.token }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
