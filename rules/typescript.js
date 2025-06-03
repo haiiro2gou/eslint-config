@@ -84,7 +84,6 @@ export default {
         "no-restricted-syntax": [
             "warn",
             {
-
                 selector:
                     "VariableDeclarator[init.type='TSAsExpression'][init.typeAnnotation.typeName.name!='const']",
                 message: "Don't use `as`.",
