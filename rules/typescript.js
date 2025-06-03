@@ -49,7 +49,7 @@ export default {
         "@typescript-eslint/restrict-plus-operands": [
             "error",
             {
-                checkCompoundAssignments: true,
+                skipCompoundAssignments: false,
                 allowBoolean: false,
                 allowNullish: false,
                 allowNumberAndString: false,
