@@ -2,6 +2,7 @@
 
 [![stars](https://img.shields.io/github/stars/haiiro2gou/eslint-config?logo=github)](https://github.com/haiiro2gou/eslint-config/stargazers)
 [![Gitmoji](https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg)](https://gitmoji.carloscuesta.me/)
+[![NPM Downloads](https://img.shields.io/npm/dw/%40haiiro2gou%2Feslint-config?label=Downloads)](https://www.npmjs.com/package/%40haiiro2gou/eslint-config)
 
 # Installation
 
