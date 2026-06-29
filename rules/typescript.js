@@ -20,9 +20,6 @@ export default {
     },
     languageOptions: {
         parser,
-        parserOptions: {
-            project: true,
-        },
     },
     rules: {
         ...typescriptEslint.configs["eslint-recommended"].overrides[0].rules,
