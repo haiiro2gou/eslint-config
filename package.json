@@ -1,6 +1,7 @@
 {
   "name": "@haiiro2gou/eslint-config",
   "version": "1.4.3",
+  "author": "haiiro2gou",
   "description": "ESLint configuration for JavaScript / TypeScript",
   "homepage": "https://github.com/haiiro2gou/eslint-config#readme",
   "bugs": {
@@ -10,8 +11,10 @@
     "type": "git",
     "url": "git+https://github.com/haiiro2gou/eslint-config.git"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "license": "MIT",
-  "author": "haiiro2gou",
   "type": "module",
   "main": "index.js",
   "types": "index.d.ts",
