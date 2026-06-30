@@ -11,9 +11,6 @@
     "type": "git",
     "url": "git+https://github.com/haiiro2gou/eslint-config.git"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "license": "MIT",
   "type": "module",
   "main": "index.js",
