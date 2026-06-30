@@ -94,7 +94,14 @@ jobs:
             echo "Publishing version ${CURRENT_VERSION} to npm with 'archive' tag..."
             npm publish --provenance --access public --tag archive
           fi
-
+        env:
+          NPM_CONFIG_LOGLEVEL: verbose
+      - name: Upload npm debug log
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: npm-debug-log
+          path: /home/runner/.npm/_logs/*.log
   publish-github:
     name: Publish to GitHub Packages
     runs-on: ubuntu-latest
