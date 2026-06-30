@@ -89,10 +89,10 @@ jobs:
           fi
           if [[ "${{ needs.build.outputs.latest_tag }}" == "$CURRENT_VERSION" ]]; then
             echo "Publishing version ${CURRENT_VERSION} to npm..."
-            npm publish --provenance --access public
+            npm publish --access public
           else
             echo "Publishing version ${CURRENT_VERSION} to npm with 'archive' tag..."
-            npm publish --provenance --access public --tag archive
+            npm publish --access public --tag archive
           fi
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
