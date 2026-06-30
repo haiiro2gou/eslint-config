@@ -89,13 +89,11 @@ jobs:
           fi
           if [[ "${{ needs.build.outputs.latest_tag }}" == "$CURRENT_VERSION" ]]; then
             echo "Publishing version ${CURRENT_VERSION} to npm..."
-            npm publish --access public
+            npm publish
           else
             echo "Publishing version ${CURRENT_VERSION} to npm with 'archive' tag..."
-            npm publish --access public --tag archive
+            npm publish --tag archive
           fi
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   publish-github:
     name: Publish to GitHub Packages
