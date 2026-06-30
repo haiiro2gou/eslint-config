@@ -89,10 +89,10 @@ jobs:
           fi
           if [[ "${{ needs.build.outputs.latest_tag }}" == "$CURRENT_VERSION" ]]; then
             echo "Publishing version ${CURRENT_VERSION} to npm..."
-            npm publish
+            npm publish --provenance --access public
           else
             echo "Publishing version ${CURRENT_VERSION} to npm with 'archive' tag..."
-            npm publish --tag archive
+            npm publish --provenance --access public --tag archive
           fi
 
   publish-github:
@@ -121,7 +121,7 @@ jobs:
             echo "${PACKAGE_NAME}@${CURRENT_VERSION} already exists on GitHub Packages. Skipping publish."
             exit 0
           fi
-          if [[ "${{ needs.build.outputs.latest_tag }}" == *"$CURRENT_VERSION"* ]]; then
+          if [[ "${{ needs.build.outputs.latest_tag }}" == "$CURRENT_VERSION" ]]; then
             echo "Publishing version ${CURRENT_VERSION} to GitHub Packages..."
             npm publish
           else
