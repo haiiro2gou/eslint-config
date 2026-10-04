@@ -6,14 +6,18 @@
  * @type {import('eslint').Linter.Config}
  */
 
-import importPlugin from "eslint-plugin-import";
+import importPlugin from "eslint-plugin-import-x";
+
+const renameImportX = (rules) => Object.fromEntries(
+    Object.entries(rules).map(([name, value]) => [name.replace(/^import-x\//u, "import/"), value]),
+);
 
 export default {
     plugins: {
         import: importPlugin,
     },
     settings: {
-        "import/resolver": {
+        "import-x/resolver": {
             node: {
                 extensions: [".mjs", ".js", ".json", ".ts"],
             },
@@ -21,21 +25,22 @@ export default {
 
             typescript: {},
         },
-        "import/extensions": [".js", ".mjs", ".jsx", "ts", "tsx"],
-        "import/core-modules": [],
-        "import/ignore": [
+        "import-x/extensions": [".js", ".mjs", ".jsx", "ts", "tsx"],
+        "import-x/core-modules": [],
+        "import-x/ignore": [
             "node_modules",
             "\\.(coffee|scss|css|less|hbs|svg|json|jpg|jpeg|png|webp)$",
         ],
 
 
-        "import/parsers": {
+        "import-x/parsers": {
             espree: [".js", ".mjs", ".jsx", "ts", "tsx"],
         },
     },
     rules: {
-        ...importPlugin.configs.recommended.rules,
-        ...importPlugin.configs.errors.rules,
+        // import-x presets use the "import-x/" prefix; keep the existing "import/" rule names
+        ...renameImportX(importPlugin.flatConfigs.recommended.rules),
+        ...renameImportX(importPlugin.flatConfigs.errors.rules),
         // extra rules
         "import/newline-after-import": "warn",
         "import/no-cycle": "error",

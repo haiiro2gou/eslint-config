@@ -9,6 +9,8 @@
 ```bash
 npm install --save-dev @haiiro2gou/eslint-config
 ```
+
+Requires ESLint 10.4+ (and TypeScript 6.0 when using the `typescript` config).
 # Usage
 Create a `eslint.config.js` file in your project root with the following content:
 ```javascript
@@ -23,7 +25,7 @@ export default [
 
 If you want to use the config with TypeScript, make sure to install the necessary dependencies.
 ```bash
-npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
+npm install --save-dev eslint typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin
 ```
 
 ### License

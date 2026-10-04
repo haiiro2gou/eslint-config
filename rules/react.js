@@ -1,27 +1,32 @@
 /**
  * @fileoverview ESLint configuration for React rules
  * This configuration includes rules that enforce best practices for React development.
- * It is based on the recommended rules from the eslint-plugin-react package.
+ * It is based on the recommended rules from the @eslint-react/eslint-plugin package.
  * @module rules/react
  * @type {import('eslint').Linter.Config}
  */
 
-import react from "eslint-plugin-react";
+import eslintReact from "@eslint-react/eslint-plugin";
 
 export default {
     plugins: {
-        react,
+        ...eslintReact.configs.recommended.plugins,
     },
     languageOptions: {
-        ...react.configs.recommended.languageOptions,
-    },
-    settings: {
-        react: {
-            version: "detect",
+        parserOptions: {
+            ecmaFeatures: {
+                jsx: true,
+            },
         },
     },
+    settings: {
+        ...eslintReact.configs.recommended.settings,
+    },
     rules: {
-        ...react.configs.recommended.rules,
+        ...eslintReact.configs.recommended.rules,
+        // covered by eslint-plugin-react-hooks (rules/react-hooks.js)
+        "@eslint-react/exhaustive-deps": "off",
+        "@eslint-react/rules-of-hooks": "off",
         // extra rules
         "no-restricted-syntax": [
             "error",
@@ -37,13 +42,6 @@ export default {
                 selector:
                     "CallExpression[callee.object.type='Identifier'][callee.object.name='React'][callee.type='MemberExpression'][callee.property.type='Identifier'][callee.property.name='useEffect'][arguments.length!=2]",
                 message: "The second argument to useEffect is required.",
-            },
-        ],
-        "react/jsx-no-bind": "error",
-        "react/jsx-no-leaked-render": [
-            "error",
-            {
-                validStrategies: ["ternary"],
             },
         ],
     },

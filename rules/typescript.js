@@ -9,7 +9,7 @@
 
 import typescriptEslint from "@typescript-eslint/eslint-plugin";
 import parser from "@typescript-eslint/parser";
-import importPlugin from "eslint-plugin-import";
+import importPlugin from "eslint-plugin-import-x";
 import n from "eslint-plugin-n";
 
 export default {
