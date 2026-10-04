@@ -1,6 +1,6 @@
 {
   "name": "@haiiro2gou/eslint-config",
-  "version": "1.5.3",
+  "version": "2.0.0",
   "author": "haiiro2gou",
   "description": "ESLint configuration for JavaScript / TypeScript",
   "homepage": "https://github.com/haiiro2gou/eslint-config#readme",
